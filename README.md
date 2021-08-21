@@ -1,2 +1,27 @@
-# VoipCall-Redes2
-Trabalho prático de redes 2. Consiste em desenvolver uma aplicação que simula uma sala virtual de conversa, onde os diferentes usuários registrados podem realizar ligações de voz entre eles. Qualquer usuário registrado pode ligar para outro usuário registrado, permitindo somente conversação entre dois usuários. Para isso, a aplicação deve ter um módulo servidor de registros que contém uma tabela atualizada com todos os usuários registrados.
+## Trabalho de Redes 2 - Etapa 1
+
+Alunos: João Victor Simonassi e Leonardo Villamarin.
+
+<hr/>
+
+## Executando o projeto
+
+	Para executar este projeto é necessário ter a versão 3.x ou superior do python instalada em sua máquina.
+
+1 - Abra o terminal no local em que estão os arquivos do projeto.
+
+2 - Para iniciar o servidor, execute:
+
+	python3 server.py
+
+3 - Para iniciar o cliente, execute:
+
+	python3 initial_connection_layout.py
+
+Obs: O comando python3 pode variar de acordo com a versão do python instalada, SO e variáveis de ambiente.
+<hr/>
+
+### A documentação completa está disponível em:
+
+https://docs.google.com/document/d/1s9ljtQjPkCMmaLctuc8opJll51Q_rt0FEvDjdfIehDM/edit?usp=sharing
+
