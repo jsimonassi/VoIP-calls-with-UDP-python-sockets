@@ -1,4 +1,7 @@
-## Trabalho de Redes 2 - Etapa 1
+## Trabalho de Redes 2
+
+Chamadas voip utilizando conexão tcp e udp.
+Sockets + pyaudio 
 
 Alunos: João Victor Simonassi e Leonardo Villamarin.
 
