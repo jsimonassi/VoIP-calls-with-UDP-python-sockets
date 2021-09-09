@@ -1,4 +1,3 @@
-import client
 from home_layout import *
 from tkinter import *
 from tkinter import messagebox
@@ -25,7 +24,8 @@ def start_connection():
     resp = client.conn(name.get(), ip.get())
     print(resp)
     if 'Novo registro efetuado' in resp:
-        set_home(name.get())
+        # Enviando também o ip atual para iniciar o servidor de ligação com o ip correto em cada máquina.
+        set_home(resp.split("/")[1], name.get())
 
     elif 'Usuário ja registrado' in resp:
         messagebox.showerror("Atenção", "Usuário já registrado - Conexão encerrada. Tente outro nome.")

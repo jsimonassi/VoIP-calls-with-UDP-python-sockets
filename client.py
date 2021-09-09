@@ -1,5 +1,6 @@
 import socket
 import threading
+import call_server
 
 
 def listen_server(callback):
@@ -16,13 +17,23 @@ def listen_server(callback):
         print("Conexão finalizada")
 
 
-def start_listener(callback):
+def start_listener(call_server_obj, callback, window, state_manager):
     """
     Inicia thread com método responsável pela escuta das respostas do servidor. É feita em uma thread separada para não
     bloquear o fluxo de execução principal da aplicação
+    :param state_manager: Gerenciador de estados de chamadas
+    :param call_server_obj: Objeto do servidor de ligação
+    :param window: GUI tkinter
     :param callback: Função passada como parâmetro pela view para exibir retornos do servidor.
     """
     thread = threading.Thread(target=listen_server, args=(callback,))
+    thread.start()
+
+    """
+    Inicia servidor de ligação e fica esperando chamadas
+    :param callback: Função passada como parâmetro pela view para exibir retornos do servidor.
+    """
+    thread = threading.Thread(target=call_server_obj.init_call_server, args=(window,))
     thread.start()
 
 
@@ -38,7 +49,7 @@ def conn(username, server_ip):
 
     HOST = server_ip
     print(HOST)
-    PORT = 5000
+    PORT = 5005
 
     dest = (HOST, PORT)
     tcp.connect(dest)
@@ -79,3 +90,7 @@ def close_conn(username=" "):
         tcp.close()
     except:
         print("______")
+
+
+def get_current_client():
+    return tcp
