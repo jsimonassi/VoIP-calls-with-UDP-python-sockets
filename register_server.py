@@ -2,7 +2,7 @@ import socket
 import json
 import threading
 
-HOST = '25.90.35.163'  # Endereco IP do Servidor
+HOST = '127.0.0.1'  # Endereco IP do Servidor
 PORT = 5005  # Porta que o Servidor esta
 tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 orig = (HOST, PORT)
